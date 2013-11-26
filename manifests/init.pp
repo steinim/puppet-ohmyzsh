@@ -4,16 +4,16 @@
 #
 #   include ohmyzsh
 class ohmyzsh {
-  $home = "/Users/${::boxen_user}"
+  $home = "/Users/steinim"
 
   repository { 'robbyrussell/oh-my-zsh':
     source => 'robbyrussell/oh-my-zsh',
-    path   => "${home}/.oh-my-zsh"
+    path   => "steinim/.oh-my-zsh"
   }
 
   file { "${home}/.oh-my-zsh/themes/stein_inge.zsh-theme":
         mode => "0644",
-        owner => '${::boxen_user}',
+        owner => 'steinim',
         group => 'staff',
         source => 'puppet:///modules/ohmyzsh/stein_inge.zsh-theme',
     }
